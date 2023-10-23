@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (response.ok) {
                 const data = await response.json();
                 const jwt = data.token;
+                console.log("Login successfull")
 
                 // Store the JWT securely (e.g., in a cookie or local storage)
                 // Redirect the user to the profile page or perform other actions
