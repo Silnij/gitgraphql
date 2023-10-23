@@ -8,10 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const password = document.getElementById("password").value;
 
         try {
-            // Create a Base64-encoded token
             const credentials = btoa(username + ":" + password);
-
-            // Make a POST request to obtain a JWT
             const response = await fetch("https://01.kood.tech/api/auth/signin", {
                 method: "POST",
                 headers: {
@@ -24,12 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 const data = await response.json();
                 const jwt = data.token;
                 console.log("Login successful");
-
-                // Store the JWT securely
                 localStorage.setItem("jwt", jwt);
 
             } else {
-                // Handle invalid credentials and display an error message
                 console.error("Login failed. Invalid credentials.");
             }
         } catch (error) {
