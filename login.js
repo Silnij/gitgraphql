@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const jwt = data.token;
                 console.log("Login successful");
                 localStorage.setItem("jwt", jwt);
+                window.location.href = "profile.html";
 
             } else {
                 console.error("Login failed. Invalid credentials.");
