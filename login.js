@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     console.log('JWT stored in localStorage:', localStorage.getItem('jwt'));
                     window.location.href = 'profile.html';
                 } else {
-                    console.error('JWT is undefined in the response data.');
+                    console.error('JWT is undefined.');
                 }
             } else {
                 console.error("Login failed. Invalid credentials.");
