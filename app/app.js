@@ -1,4 +1,4 @@
-import { makeGraphQLQuery } from './graphqlClient';
+import { makeGraphQLQuery } from '../app/graphqlClient';
 
 const query = `
     query {
