@@ -19,10 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (response.ok) {
                 console.log("response:", response);
-                const data = await response.json();
-                console.log('Login Response Data:', data);
-                const jwt = data.token;
-                console.log("data.token:", data.token)
+                const jwt = await response.json();
                 console.log('JWT received in login response:', jwt);
             
                 if (jwt) {
