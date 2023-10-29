@@ -1,7 +1,6 @@
 import { makeGraphQLQuery } from  "./graphqlClient.js";
 
 const userQuery = `
-        {
             user {
             id
             login
@@ -9,7 +8,6 @@ const userQuery = `
             audits
             skills
         } 
-    }
 `;
 
 makeGraphQLQuery(userQuery)
