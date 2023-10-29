@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const data = await response.json();
                 const jwt = data.token;
                 console.log("Login successful");
+                console.log('JWT received in login response:', jwt);
                 localStorage.setItem("jwt", jwt);
                 window.location.href = "profile.html";
 
