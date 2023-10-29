@@ -9,11 +9,10 @@ if (parts.length === 3) {
     const [header, payload, signature] = parts;
     const decodedHeader = JSON.parse(atob(header));
     const decodedPayload = JSON.parse(atob(payload));
-    const decodedSignature = JSON.parse(atob(signature));
 
     console.log('Decoded Header:', decodedHeader);
     console.log('Decoded Payload:', decodedPayload);
-    console.log('Decoded Signature:', decodedSignature);
+    console.log('Signature:', signature);
 } else {
     console.error('Invalid JWT format: Expected 3 parts.');
     console.log('JWT:',jwt);
