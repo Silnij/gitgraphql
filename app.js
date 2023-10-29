@@ -1,14 +1,14 @@
 import { makeGraphQLQuery } from  "./graphqlClient.js";
 
 const userQuery = `
-    query {
-        user {
+        {
+            user {
             id
             login
             xp
             audits
             skills
-        }
+        } 
     }
 `;
 
