@@ -15,6 +15,8 @@ if (parts.length === 3) {
     console.log('Signature:', signature);
 } else {
     console.error('Invalid JWT format: Expected 3 parts.');
+    console.log('JWT:',jwt);
+    console.log('parts:', parts);
 }
 
     try {
