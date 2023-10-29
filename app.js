@@ -14,9 +14,9 @@ const userQuery = `
 
 makeGraphQLQuery(userQuery)
     .then(data => {
+        console.log('GraphQL Data:', data);
         const userData = data.data.user;
         updateProfileWithData(userData);
-        console.log('GraphQL Data:', data);
     })
     .catch(error => {
         console.error('Failed to fetch user data:', error);
