@@ -3,6 +3,20 @@ const API_URL = 'https://01.kood.tech/api/graphql-engine/v1/graphql';
 async function makeGraphQLQuery(query, variables = {}) {
     const jwt = localStorage.getItem('jwt'); 
 
+    const parts = jwt.split('.'); // Split the JWT into its parts
+
+if (parts.length === 3) {
+    const [header, payload, signature] = parts;
+    const decodedHeader = JSON.parse(atob(header));
+    const decodedPayload = JSON.parse(atob(payload));
+
+    console.log('Decoded Header:', decodedHeader);
+    console.log('Decoded Payload:', decodedPayload);
+    console.log('Signature:', signature);
+} else {
+    console.error('Invalid JWT format: Expected 3 parts.');
+}
+
     try {
         const response = await fetch(API_URL, {
             method: 'POST',
