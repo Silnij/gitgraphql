@@ -1,6 +1,6 @@
 import { makeGraphQLQuery } from  "./graphqlClient.js";
 
-const query = `
+const userQuery = `
     query {
         user {
             id
