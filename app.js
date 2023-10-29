@@ -1,13 +1,21 @@
 import { makeGraphQLQuery } from  "./graphqlClient.js";
 
 const userQuery = `
-            user {
-            id
-            login
-            xp
-            audits
-            skills
-        } 
+{
+    user {
+      id
+      login
+      xps {
+        userId
+        amount
+        path
+      }
+    }
+    audit {
+      auditorId
+      grade
+    }
+  }
 `;
 
 makeGraphQLQuery(userQuery)
