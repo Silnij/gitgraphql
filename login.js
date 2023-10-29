@@ -21,11 +21,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 const data = await response.json();
                 console.log('Login Response Data:', data);
                 const jwt = data.token;
-                console.log("Login successful");
                 console.log('JWT received in login response:', jwt);
-                localStorage.setItem("jwt", jwt);
-                window.location.href = "profile.html";
-
+            
+                if (jwt) {
+                    localStorage.setItem('jwt', jwt);
+                    console.log('JWT stored in localStorage:', localStorage.getItem('jwt'));
+                    window.location.href = 'profile.html';
+                } else {
+                    console.error('JWT is undefined in the response data.');
+                }
             } else {
                 console.error("Login failed. Invalid credentials.");
             }
