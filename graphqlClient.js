@@ -3,7 +3,7 @@ const API_URL = 'https://01.kood.tech/api/graphql-engine/v1/graphql';
 async function makeGraphQLQuery(query, variables = {}) {
     const jwt = localStorage.getItem('jwt'); 
 
-    const parts = jwt.split('.'); // Split the JWT into its parts
+    const parts = jwt.split('.');
 
 if (parts.length === 3) {
     const [header, payload, signature] = parts;
