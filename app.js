@@ -24,10 +24,20 @@ makeGraphQLQuery(userQuery)
         console.log("xp:", totalXp);
         console.log("auditRatio:", userData[0].auditRatio);
 
-        const svgXp = document.getElementById ('xpChart')
-        const chartWidth = 400;
-        const chartHeight = 200;
-        const barWidth = chartWidth / xps.length;
+    const svgXp = document.getElementById("xpChart");
+    const chartWidth = parseInt(
+      getComputedStyle(svgXp).getPropertyValue("width"),
+      10
+    );
+    const chartHeight = parseInt(
+      getComputedStyle(svgXp).getPropertyValue("height"),
+      10
+    );
+
+    svgXp.innerHTML = "";
+
+    const barWidth = chartWidth / xps.length;
+
 
         xps.forEach((xp, index) => {
         const barHeight = (xp.amount / totalXp) * chartHeight;
