@@ -7,6 +7,7 @@ const userQuery = `
       login
       xps {
         amount
+        path
       }
       auditRatio
     }
@@ -50,10 +51,27 @@ makeGraphQLQuery(userQuery)
         bar.setAttribute("width", barWidth);
         bar.setAttribute("height", barHeight);
         bar.setAttribute("fill", "blue");
+        bar.setAttribute("data-path", xp.path); 
+
+        const tooltip = document.createElementNS(
+            "http://www.w3.org/2000/svg",
+            "title"
+          );
+          tooltip.textContent = `XP: ${xp.amount}`
+          bar.appendChild(tooltip);
+
+          const xpText = document.createElementNS("http://www.w3.org/2000/svg", "text");
+          xpText.setAttribute("x", x + barWidth / 2);
+          xpText.setAttribute("y", y - 5);
+          xpText.setAttribute("text-anchor", "middle");
+          xpText.textContent = xp.path;
+    
+          svgXp.appendChild(bar);
+          svgXp.appendChild(xpText);
+        });
 
         svgXp.appendChild(bar);
     })
     .catch(error => {
         console.error('Failed to fetch user data:', error);
-    });
     });
