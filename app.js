@@ -22,8 +22,7 @@ makeGraphQLQuery(userQuery)
         const xps = userData[0].xps
         const totalXp = xps.reduce ((sum, xp) => sum + xp.amount, 0);
         console.log("xp:", totalXp);
-        console.log("auditRatio:", auditRatio);
-        updateProfileWithData(userData);
+        console.log("auditRatio:", userData.auditRatio);
     })
     .catch(error => {
         console.error('Failed to fetch user data:', error);
