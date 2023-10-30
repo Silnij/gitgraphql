@@ -18,9 +18,7 @@ makeGraphQLQuery(userQuery)
     .then(data => {
         console.log('GraphQL Data:', data);
         const userData = data.data.user;
-        console.log("userData:", userData);
-        const xps = userData.xps
-        console.log("userDataXps:", xps);
+        const xps = userData[0].xps
         const totalXp = xps.reduce ((sum, xp) => sum + xp.amount, 0);
         console.log("xp:", totalXp);
         //console.log("auditRatio:", auditRatio);
