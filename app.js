@@ -25,7 +25,7 @@ makeGraphQLQuery(userQuery)
         console.log("xp:", totalXp);
         console.log("auditRatio:", userData[0].auditRatio);
 
-    const svgXp = document.getElementById("xpChart");
+    const svgXp = document.getElementById("xpChartContainer");
     const chartWidth = parseInt(
       getComputedStyle(svgXp).getPropertyValue("width"),
       10
@@ -51,7 +51,7 @@ makeGraphQLQuery(userQuery)
         bar.setAttribute("width", barWidth);
         bar.setAttribute("height", barHeight);
         bar.setAttribute("fill", "blue");
-        bar.setAttribute("data-path", xp.path); 
+        //bar.setAttribute("data-path", xp.path); 
 
         const tooltip = document.createElementNS(
             "http://www.w3.org/2000/svg",
@@ -60,14 +60,14 @@ makeGraphQLQuery(userQuery)
           tooltip.textContent = `XP: ${xp.amount}`
           bar.appendChild(tooltip);
 
-          const xpText = document.createElementNS("http://www.w3.org/2000/svg", "text");
+         /* const xpText = document.createElementNS("http://www.w3.org/2000/svg", "text");
           xpText.setAttribute("x", x + barWidth / 2);
           xpText.setAttribute("y", y - 5);
           xpText.setAttribute("text-anchor", "middle");
-          xpText.textContent = xp.path;
+          xpText.textContent = xp.path;*/
     
           svgXp.appendChild(bar);
-          svgXp.appendChild(xpText);
+          //svgXp.appendChild(xpText);
         });
 
         svgXp.appendChild(bar);

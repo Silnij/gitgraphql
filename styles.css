@@ -81,10 +81,14 @@ body, h1, h2, p {
     margin: 20px auto;
   }
   
-  #xpChart{
-    width: 2000;
-    height: 4000;
-
+  #xpChartContainer {
+    width: 800px; 
+    height: 600px;
+  }
+  
+  #xpChart {
+    width: 100%;
+    height: 100%;
   }
  
   @media (max-width: 600px) {
