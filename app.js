@@ -9,7 +9,6 @@ const userQuery = `
         amount
       }
     }
-    auditRatio
   }
 `;
 
@@ -22,7 +21,7 @@ makeGraphQLQuery(userQuery)
         const xps = userData.xps
         const totalXp = xps.reduce ((sum, xp) => sum + xp.amount, 0);
         console.log("xp:", totalXp);
-        console.log("auditRatio:", auditRatio);
+        //console.log("auditRatio:", auditRatio);
         updateProfileWithData(userData);
     })
     .catch(error => {
@@ -32,10 +31,10 @@ makeGraphQLQuery(userQuery)
     function updateProfileWithData(userData) {
         const userNameElement = document.getElementById('user-name');
         const userXpElement = document.getElementById('user-xp');
-        const userAuditsElement = document.getElementById('user-audits');
+        //const userAuditsElement = document.getElementById('user-audits');
 
         userNameElement.textContent = userData.login;
         userXpElement.textContent = totalXp;
-        userAuditsElement.textContent = userData.auditRatio;
+      //  userAuditsElement.textContent = userData.auditRatio;
     }
     
