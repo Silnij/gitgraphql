@@ -82,8 +82,8 @@ body, h1, h2, p {
   }
   
   #xpChart{
-    width: fit-content;
-    height: fit-content;
+    width: 800;
+    height: 600;
 
   }
  
