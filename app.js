@@ -6,22 +6,23 @@ const userQuery = `
       id
       login
       xps {
-        userId
         amount
-        path
       }
     }
-    audit {
-      auditorId
-      grade
-    }
+    auditRatio
   }
 `;
+
+
 
 makeGraphQLQuery(userQuery)
     .then(data => {
         console.log('GraphQL Data:', data);
         const userData = data.data.user;
+        const xps = userData.xps
+        const totalXp = xps.reduce ((sum, xp) => sum + xp.amount, 0);
+        console.log("xp:", totalXp);
+        console.log("auditRatio:", auditRatio);
         updateProfileWithData(userData);
     })
     .catch(error => {
@@ -34,7 +35,7 @@ makeGraphQLQuery(userQuery)
         const userAuditsElement = document.getElementById('user-audits');
 
         userNameElement.textContent = userData.login;
-        userXpElement.textContent = userData.xps;
-        userAuditsElement.textContent = userData.audit;
+        userXpElement.textContent = totalXp;
+        userAuditsElement.textContent = userData.auditRatio;
     }
     
