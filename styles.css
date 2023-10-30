@@ -81,6 +81,11 @@ body, h1, h2, p {
     margin: 20px auto;
   }
   
+  #xpChart{
+    width: fit-content;
+    height: fit-content;
+
+  }
  
   @media (max-width: 600px) {
     section {
