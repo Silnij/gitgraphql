@@ -25,7 +25,7 @@ makeGraphQLQuery(userQuery)
         console.log("xp:", totalXp);
         console.log("auditRatio:", userData[0].auditRatio);
 
-    const svgXp = document.getElementById("xpChartContainer");
+    const svgXp = document.getElementById("xpChart");
     const chartWidth = parseInt(
       getComputedStyle(svgXp).getPropertyValue("width"),
       10
