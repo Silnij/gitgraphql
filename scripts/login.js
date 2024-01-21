@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
+        const errorMessage = document.getElementById("error-message")
 
         try {
             const credentials = btoa(username + ":" + password);
