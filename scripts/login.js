@@ -18,18 +18,19 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
             if (response.ok) {
-                console.log("response:", response);
+                //console.log("response:", response);
                 const jwt = await response.json();
-                console.log('JWT received in login response:', jwt);
+                //console.log('JWT received in login response:', jwt);
             
                 if (jwt) {
                     localStorage.setItem('jwt', jwt);
-                    console.log('JWT stored in localStorage:', localStorage.getItem('jwt'));
+                    //console.log('JWT stored in localStorage:', localStorage.getItem('jwt'));
                     window.location.href = 'profile.html';
                 } else {
                     console.error('JWT is undefined.');
                 }
             } else {
+                errorMessage.style.display = 'block';
                 console.error("Login failed. Invalid credentials.");
             }
         } catch (error) {

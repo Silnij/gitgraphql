@@ -10,13 +10,13 @@ if (parts.length === 3) {
     const decodedHeader = JSON.parse(atob(header));
     const decodedPayload = JSON.parse(atob(payload));
 
-    console.log('Decoded Header:', decodedHeader);
-    console.log('Decoded Payload:', decodedPayload);
-    console.log('Signature:', signature);
+    //console.log('Decoded Header:', decodedHeader);
+    //console.log('Decoded Payload:', decodedPayload);
+    //console.log('Signature:', signature);
 } else {
     console.error('Invalid JWT format: Expected 3 parts.');
-    console.log('JWT:',jwt);
-    console.log('parts:', parts);
+    //console.log('JWT:',jwt);
+    //console.log('parts:', parts);
 }
 
     try {
@@ -47,5 +47,6 @@ if (parts.length === 3) {
         throw new Error(`GraphQL query encountered an error: ${error.message}`);
     }
 }
+
 
 export { makeGraphQLQuery };

@@ -3,20 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles.css">
     <title>Your Profile</title>
 </head>
 <body>
     <header>
         <h1>Your Profile</h1>
+        <button id="logoutButton">LOGOUT</button>
     </header>
 
     <section class="user-info">
         <h2>User Information</h2>
-        <div id="xpChartContainer">
-            <svg id="xpChart"></svg>
-          </div>
+        <h3>XP and Tasks</h3>
+        <div>
+            <button type="button" id="div-01Button">Div 01</button>
+            <button type="button" id="rustButton">Rust</button>
+            <button type="button" id="piscine-js-2-oldButton">Piscine JavaScript</button>
+            <button type="button" id="piscine-goButton">Piscine Go</button>
+        </div>
+        <div class="chartContainer" id="div-01ChartContainer">
+            <svg id="div-01Chart" ></svg>
+        </div>
+        <div class="chartContainer" id="rustChartContainer">
+            <svg id="rustChart"></svg>
+        </div>
+        <div class="chartContainer" id="piscine-js-2-oldChartContainer">
+            <svg id="piscine-js-2-oldChart"></svg>
+        </div>
+        <div class="chartContainer" id="piscine-goChartContainer">
+            <svg id="piscine-goChart"></svg>
+        </div>
+        <h3>Audits</h3>
+        <div class="auditsContainer" id="auditsContainer">
+            <svg id="audits"></svg>
+        </div> 
+        <h3>Created by</h3>
+        <div class="meContainer" id="meContainer">
+            <svg id="me"></svg>
+        </div>
     </section>
-    <script type="module" src="app.js"></script>
+    <script type="module" src="scripts/app.js"></script>
 </body>
 </html>
