@@ -59,6 +59,10 @@ function showCategory(category) {
           svgContainer.innerHTML = "";
           svgContainer.style.display = "block";
           svgContainers[category] = svgContainer;
+          const button = document.getElementById(`${category}Button`);
+          button.addEventListener('click', () => {
+          showCategory(category);
+      });
         });
   
         xps.forEach((xp, index) => {
@@ -115,12 +119,5 @@ function showCategory(category) {
       .catch(error => {
         console.error('Failed to fetch user data:', error);
       });
-  
-    categories.forEach(category => {
-      const button = document.getElementById(`${category}Button`);
-      button.addEventListener('click', () => {
-        showCategory(category);
-      });
-    });
   };
 export {fetchXpData};
